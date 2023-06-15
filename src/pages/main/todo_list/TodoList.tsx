@@ -46,7 +46,7 @@ function TodoList() {
       setData([...arr]);
     }
   };
-  console.log(onEditTaskData);
+
   return (
     <div className="todo_list_main_container">
       <div className="todo_heading">Just do it.</div>
