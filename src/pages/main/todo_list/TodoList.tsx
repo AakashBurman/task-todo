@@ -1,36 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomModal from "src/components/CustomModal";
 import CustomInput from "src/components/customInput/CustomInput";
 import TodoListItem from "src/components/todoListItem/TodoListItem";
 import "./todoList.scss";
+import { useAppDispatch, useAppSelector } from "src/utils/hooks";
+import { updateTodoData } from "src/redux/reducers/todoReducer";
 
 function TodoList() {
+  const dispatch = useAppDispatch();
+  const persistData = useAppSelector((state) => state?.todoReducer?.todoData);
   const [open, setOpen] = useState(false);
   const [data, setData] = useState<Array<any>>([]);
   const [onEditTaskData, setOnEditTaskData] = useState<any>({});
-  // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const [inputValue, setInputValue] = useState<string | number | undefined>(
     undefined
   );
+  console.log(data);
   const handleAddClick = (e: any) => {
     if (e.key === "Enter" && !!inputValue) {
       let arr = data;
       arr?.push({ id: arr?.length, task: inputValue, isMarked: false });
       setInputValue("");
       setData([...arr]);
+      // dispatch(updateTodoData([...arr]));
     }
   };
   const handleIsMarkedToggler = (index: any) => {
     let arr = data;
     arr[index].isMarked = !arr[index].isMarked;
     setData([...arr]);
+    // dispatch(updateTodoData([...arr]));
   };
 
   const handleDeleteClick = (index: number) => {
     let arr = data;
     arr.splice(index, 1);
     setData([...arr]);
+    // dispatch(updateTodoData([...arr]));
   };
 
   const handleSaveClick = () => {
@@ -44,6 +51,7 @@ function TodoList() {
       arr[onEditTaskData?.index].task = onEditTaskData?.task;
       setOpen(false);
       setData([...arr]);
+      // dispatch(updateTodoData([...arr]));
     }
   };
 

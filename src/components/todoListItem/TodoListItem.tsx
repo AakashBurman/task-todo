@@ -37,6 +37,7 @@ TTodoListItem) {
       >
         <input
           type="checkbox"
+          checked={!!data?.isMarked ? data?.isMarked : undefined}
           className="todo_list_item_input"
           style={{ backgroundColor: "red" }}
           onClick={handleToggler}

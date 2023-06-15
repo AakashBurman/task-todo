@@ -16,7 +16,7 @@ export const todoReducer = createSlice({
   initialState,
   reducers: {
     updateTodoData: (state, action: PayloadAction<any>) => {
-      state.todoData = action.payload;
+      state.todoData = { ...state.todoData, ...action.payload };
     },
   },
 });
