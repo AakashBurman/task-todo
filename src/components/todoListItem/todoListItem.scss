@@ -1,0 +1,19 @@
+.todo_list_item_main_container {
+  display: flex;
+  max-width: 440px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  margin: 7px 0;
+}
+.todo_list_item_input {
+  height: 20px;
+  width: 20px;
+  border: 1px solid transparent;
+  accent-color: grey;
+  cursor: pointer;
+}
+.todo_list_item_input:checked::before {
+  accent-color: grey;
+}

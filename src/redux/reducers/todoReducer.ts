@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define a type for the slice state
-interface AuthState {
+interface TodoState {
   todoData: any;
 }
 
 // Define the initial state using that type
-const initialState: AuthState = {
-  todoData: {},
+const initialState: TodoState = {
+  todoData: [],
 };
 
-export const authReducer = createSlice({
+export const todoReducer = createSlice({
   name: "todo",
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
@@ -21,9 +21,9 @@ export const authReducer = createSlice({
   },
 });
 
-export const { updateTodoData } = authReducer.actions;
+export const { updateTodoData } = todoReducer.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 // export const selectCount = (state: RootState) => state.counter.value;
 
-export default authReducer.reducer;
+export default todoReducer.reducer;

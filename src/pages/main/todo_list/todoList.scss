@@ -1,0 +1,17 @@
+.todo_list_main_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+.todo_heading {
+  font-size: 50px;
+  font-weight: 400;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  margin: 15px 0;
+}
