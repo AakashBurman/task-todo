@@ -1,8 +1,6 @@
-import { useState } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import Typography from "@mui/material/Typography";
 import CustomButton from "./customButton/CustomButton";
 
 const style = {
@@ -33,7 +31,6 @@ export default function CustomModal({
   handleSaveClick,
   setOnEditTaskData,
 }: TCustomModal) {
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
@@ -53,9 +50,7 @@ export default function CustomModal({
           >
             Edit Task
           </Typography>
-          {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
+
           <textarea
             value={onEditTaskData ? onEditTaskData?.task : ""}
             onChange={(e: any) =>

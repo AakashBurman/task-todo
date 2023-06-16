@@ -1,5 +1,3 @@
-import React from "react";
-
 type TACustomButton = {
   title: string;
   mode?: "green" | "blue" | "black" | "red";

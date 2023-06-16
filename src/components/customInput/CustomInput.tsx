@@ -1,6 +1,5 @@
-import { useState } from "react";
-import "./customInput.scss";
 import { AiOutlineAlignLeft } from "react-icons/ai";
+import "./customInput.scss";
 type TCustomInput = {
   handleAdd: (e: any) => void;
   inputValue: string | number | undefined;

@@ -33,11 +33,9 @@ function TodoListItem({
         <input
           type="checkbox"
           onChange={handleToggler}
-          // checked={!!data?.isMarked ? data?.isMarked : undefined}
           checked={data?.isMarked ? data?.isMarked : false}
           className="todo_list_item_input"
           style={{ backgroundColor: "red" }}
-          // onClick={handleToggler}
         />
         <div
           style={{
