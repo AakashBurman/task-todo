@@ -62,7 +62,8 @@ function TodoList() {
       <div
         style={{
           display: "flex",
-          width: "500px",
+          maxWidth: "500px",
+          width: "100%",
           position: "relative",
           alignItems: "center",
           justifyContent: "center",
@@ -83,18 +84,7 @@ function TodoList() {
             placeholder="Add a task"
           />
         )}
-        {/* <button
-          style={{
-            position: "absolute",
-            right: 0,
-            width: "50px",
-            height: "52px",
-            top: 0,
-          }}
-          onClick={handleSearch}
-        >
-          S
-        </button> */}
+
         {isSearch ? (
           <IoIosAddCircleOutline
             onClick={() => setIsSearch(false)}

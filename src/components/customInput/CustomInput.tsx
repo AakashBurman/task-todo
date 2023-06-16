@@ -28,7 +28,7 @@ function CustomInput({
             position: "absolute",
             color: "#a3a3a3",
             fontSize: "20px",
-            left: 28,
+            left: 58,
             top: 16,
           }}
         />
