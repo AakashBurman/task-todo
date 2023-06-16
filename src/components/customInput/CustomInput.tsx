@@ -1,7 +1,7 @@
 import { AiOutlineAlignLeft } from "react-icons/ai";
 import "./customInput.scss";
 type TCustomInput = {
-  onKeyDown: (e: any) => void;
+  onKeyDown?: (e: any) => void;
   inputValue: string | number | undefined;
   setValue: (e: string | number | undefined) => void;
   placeholder?: string;
@@ -20,7 +20,7 @@ function CustomInput({
           className="custom_input_container"
           placeholder={placeholder}
           value={inputValue ? inputValue : ""}
-          onKeyDown={(e) => onKeyDown(e)}
+          onKeyDown={(e) => onKeyDown && onKeyDown(e)}
           onChange={(e) => setValue(e?.target?.value)}
         />
         <AiOutlineAlignLeft

@@ -52,10 +52,6 @@ function TodoList() {
     }
   };
 
-  const handleSearch = () => {
-    // setIsSearch((prev) => !prev);
-  };
-
   return (
     <div className="todo_list_main_container">
       <div className="todo_heading">Just do it.</div>
@@ -71,7 +67,6 @@ function TodoList() {
       >
         {isSearch ? (
           <CustomInput
-            onKeyDown={handleSearch}
             inputValue={searchValue}
             setValue={setSearchValue}
             placeholder="Search a task"
