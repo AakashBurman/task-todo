@@ -44,6 +44,7 @@ function TodoListItem({
             textDecorationLine: data?.isMarked ? "line-through" : "none",
             paddingLeft: "4px",
             flex: 1,
+            wordBreak: "break-word",
           }}
         >
           {data?.task}
