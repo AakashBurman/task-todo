@@ -1,21 +1,27 @@
 import { AiOutlineAlignLeft } from "react-icons/ai";
 import "./customInput.scss";
 type TCustomInput = {
-  handleAdd: (e: any) => void;
+  onKeyDown: (e: any) => void;
   inputValue: string | number | undefined;
-  setInputValue: (e: string | number | undefined) => void;
+  setValue: (e: string | number | undefined) => void;
+  placeholder?: string;
 };
-function CustomInput({ handleAdd, inputValue, setInputValue }: TCustomInput) {
+function CustomInput({
+  onKeyDown,
+  inputValue,
+  setValue,
+  placeholder = "enter here",
+}: TCustomInput) {
   return (
     <div className="custom_input_main_container">
       <>
         <input
           autoFocus={true}
           className="custom_input_container"
-          placeholder="Add a task"
+          placeholder={placeholder}
           value={inputValue ? inputValue : ""}
-          onKeyDown={(e) => handleAdd(e)}
-          onChange={(e) => setInputValue(e?.target?.value)}
+          onKeyDown={(e) => onKeyDown(e)}
+          onChange={(e) => setValue(e?.target?.value)}
         />
         <AiOutlineAlignLeft
           style={{
