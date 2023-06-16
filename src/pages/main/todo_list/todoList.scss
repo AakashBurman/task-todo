@@ -15,3 +15,12 @@
   text-align: center;
   margin: 15px 0;
 }
+
+.todo_list_container {
+  max-height: 80vh;
+  overflow-y: scroll;
+  width: 440px;
+}
+.todo_list_container::-webkit-scrollbar {
+  display: none;
+}

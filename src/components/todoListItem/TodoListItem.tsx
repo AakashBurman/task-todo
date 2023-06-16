@@ -10,24 +10,19 @@ type TTodoListItem = {
   onEditClick: () => void;
   onDeleteClick: () => void;
   handleToggler: () => void;
-  // setAnchorEl: (e: any) => void;
-  // anchorEl: any;
 };
 function TodoListItem({
   data,
   onEditClick,
   onDeleteClick,
   handleToggler,
-}: // setAnchorEl,
-// anchorEl,
-TTodoListItem) {
+}: TTodoListItem) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
   const handleMenuClose = () => {
-    // !!id?.toString() && onEditClick(id);
     setAnchorEl(null);
   };
   return (
@@ -37,10 +32,12 @@ TTodoListItem) {
       >
         <input
           type="checkbox"
-          checked={!!data?.isMarked ? data?.isMarked : undefined}
+          onChange={handleToggler}
+          // checked={!!data?.isMarked ? data?.isMarked : undefined}
+          checked={data?.isMarked ? data?.isMarked : false}
           className="todo_list_item_input"
           style={{ backgroundColor: "red" }}
-          onClick={handleToggler}
+          // onClick={handleToggler}
         />
         <div
           style={{
@@ -73,16 +70,18 @@ TTodoListItem) {
             },
           }}
         >
-          <MenuItem
-            onClick={() => {
-              onEditClick();
-              handleMenuClose();
-            }}
-            style={{ color: "#fff" }}
-          >
-            <HiPencilAlt style={{ paddingRight: "5px" }} />
-            <div style={{ fontWeight: "bold", marginTop: "2px" }}>Edit</div>
-          </MenuItem>
+          {!data?.isMarked && (
+            <MenuItem
+              onClick={() => {
+                onEditClick();
+                handleMenuClose();
+              }}
+              style={{ color: "#fff" }}
+            >
+              <HiPencilAlt style={{ paddingRight: "5px" }} />
+              <div style={{ fontWeight: "bold", marginTop: "2px" }}>Edit</div>
+            </MenuItem>
+          )}
           <MenuItem
             onClick={() => {
               onDeleteClick();

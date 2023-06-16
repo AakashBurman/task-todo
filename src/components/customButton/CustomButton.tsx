@@ -10,7 +10,7 @@ function CustomButton({ title, mode = "black", onClick }: TACustomButton) {
     <button
       onClick={onClick}
       style={{
-        color: mode,
+        color: mode === "green" ? "#279f41" : mode,
         height: "35px",
         width: "100px",
         fontSize: "12px",
